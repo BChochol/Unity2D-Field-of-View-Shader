@@ -1,2 +1,3 @@
-# Unity2D-Field-of-View-Shader
-Project with shaders for Unity2D (with URP) that either cover or are covered by player's vision.
+# Field of View shaders for Unity2D with URP
+Project consist of sample assets and two main shaders, both based on ShadowCaster2D system and Default-Lit-Shader provided in URP. However, both shaders are intependent of 2D Lighting, which means they can both cover player's vision and cast shadows from light on scene.
+I achieved this effect by adding new blend style to URP's settings and assigning it to a 2D Light plugged to player. This way, player's field of view acts as a 2D Light and has all settings that a 2D Light would have, but it doesn't illuminate anything. Instead, it greys out everything that is outside player's vision. Additionally, objects that have material with "Covered" shader become invisible when not in the range of the vision. The field of view is obstructed by objects with ShadowCaster2D.
